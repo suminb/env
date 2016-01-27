@@ -14,9 +14,16 @@ if ! command_exists zsh; then
     # Change the default shell
     chsh -s $(which zsh)
 fi
-if ! command_exists git; then
-    sudo apt-get install -y git
-fi
+
+echo -n "Enter your full name for git: "
+read git_user_name
+git config --global user.name "$git_user_name"
+
+echo -n "Enter your email for git: "
+read git_email
+git config --global user.email "$git_email"
+
+git config --global core.editor vim
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
