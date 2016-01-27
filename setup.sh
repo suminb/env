@@ -4,7 +4,9 @@ command_exists() {
     which "$1" &> /dev/null
 }
 
-BASE_PATH=$(dirname $0)
+pushd $(dirname $0)
+BASE_PATH=$(pwd)
+popd
 
 if ! command_exists zsh; then
     sudo apt-get install -y zsh
