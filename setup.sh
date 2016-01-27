@@ -21,6 +21,9 @@ fi
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Use 256 colors
+echo "export TERM=screen-256color" >> $HOME/.zshrc
+
 # Make a symlink to .vimrc
 pushd $HOME
 ln -s $BASE_PATH/.vimrc
