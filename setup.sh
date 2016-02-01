@@ -38,9 +38,20 @@ pushd $HOME
 ln -s $BASE_PATH/.vimrc
 popd
 
-# Install Vundle
+echo "Install Vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# Install my favoriate Vim theme (maui)
+echo "Install my favoriate Vim theme (maui)"
 mkdir ~/.vim/colors
 cp $BASE_PATH/maui.vim ~/.vim/colors/
+
+echo "Install Couchbase libraries"
+wget -O- http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add - 
+sudo wget -O/etc/apt/sources.list.d/couchbase.list \
+        http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list
+sudo apt-get update
+sudo apt-get install -y libcouchbase2-libevent libcouchbase-dev
+
+echo "Install other necessary libraries"
+sudo apt-get install -y python-dev python-pip python-virtualenv
+sudo apt-get install -y libffi-dev libpq-dev
