@@ -55,4 +55,4 @@ sudo apt-get install -y libcouchbase2-libevent libcouchbase-dev
 echo "Install other necessary libraries & programs"
 sudo apt-get install -y python-dev python-pip python-virtualenv
 sudo apt-get install -y libffi-dev libpq-dev
-sudo apt-get install -y git-flow
+sudo apt-get install -y git-flow ack-grep
