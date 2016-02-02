@@ -40,6 +40,9 @@ popd
 
 echo "Install Vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Required to build YouCompleteMe plugin for vim
+sudo apt-get install -y cmake
+vim +PluginInstall +qall
 
 echo "Install my favoriate Vim theme (maui)"
 mkdir ~/.vim/colors
