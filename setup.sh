@@ -38,20 +38,21 @@ pushd $HOME
 ln -s $BASE_PATH/.vimrc
 popd
 
+echo "Install my favoriate Vim theme (maui)"
+mkdir $HOME/.vim/colors
+cp $BASE_PATH/maui.vim ~/.vim/colors/
+
 echo "Install Vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Required to build YouCompleteMe plugin for vim
 sudo apt-get install -y cmake
 vim +PluginInstall +qall
-
-echo "Install my favoriate Vim theme (maui)"
-mkdir ~/.vim/colors
-cp $BASE_PATH/maui.vim ~/.vim/colors/
+python $HOME/.vim/bundle/YouCompleteMe/install.py
 
 echo "Install Couchbase libraries"
-wget -O- http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add - 
-sudo wget -O/etc/apt/sources.list.d/couchbase.list \
-        http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list
+curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
+sudo curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list > \
+    /etc/apt/sources.list.d/couchbase.list
 sudo apt-get update
 sudo apt-get install -y libcouchbase2-libevent libcouchbase-dev
 
