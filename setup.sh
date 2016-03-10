@@ -39,7 +39,7 @@ ln -s $BASE_PATH/.vimrc
 popd
 
 echo "Install my favoriate Vim theme (maui)"
-mkdir $HOME/.vim/colors
+mkdir -p $HOME/.vim/colors
 cp $BASE_PATH/maui.vim ~/.vim/colors/
 
 echo "Install Vundle"
