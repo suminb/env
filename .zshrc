@@ -80,6 +80,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias rm.pyc="find . -name '*.pyc' -delete -print"
+alias rm.stopped-containers="docker rm $(docker ps -a -q)"
+alias rm.untagged-images="docker rmi -f $(docker images | grep "^<none>" | awk '{print $3}')"
 alias pt="ptpython --vi"
 
 export PATH=$PATH:$HOME/anaconda/bin:$HOME/.npm-packages/bin
