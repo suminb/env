@@ -60,3 +60,4 @@ echo "Install other necessary libraries & programs"
 sudo apt-get install -y python-dev python-pip python-virtualenv
 sudo apt-get install -y libffi-dev libpq-dev
 sudo apt-get install -y git-flow ack-grep
+sudo pip install isort

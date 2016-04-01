@@ -25,6 +25,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'rhysd/committia.vim'
 Plugin 'Valloric/YouCompleteMe'
 
+" Python extensions
+Plugin 'fisadev/vim-isort'
+
 " -----------------------------------------------------------------------------
 " vundle requires
 call vundle#end()
