@@ -67,3 +67,5 @@ def setup():
 def copy_ssh_keys():
     put('~/.ssh/id_rsa', '.ssh/')
     put('~/.ssh/id_rsa.pub', '.ssh/')
+    run('chmod 700 .ssh')
+    run('chmod 600 .ssh/*')
