@@ -1,4 +1,4 @@
-from fabric.api import prompt, run, sudo, warn_only
+from fabric.api import prompt, put, run, sudo, warn_only
 from fabric.context_managers import cd
 from fabric.contrib.files import exists
 
@@ -62,3 +62,8 @@ def setup():
         run('echo "export WORKON_HOME=$HOME/.virtualenvs" >> $HOME/.zshrc')
         # run('export PROJECT_HOME=$HOME/dev')
         run('source /usr/local/bin/virtualenvwrapper.sh')
+
+
+def copy_ssh_keys():
+    put('~/.ssh/id_rsa', '.ssh/')
+    put('~/.ssh/id_rsa.pub', '.ssh/')
