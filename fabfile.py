@@ -4,10 +4,13 @@ from fabric.contrib.files import exists
 
 
 def setup():
+    run('curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -')
+    sudo('curl curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list -o /etc/apt/sources.list.d/couchbase.list')
     sudo('apt-get update && apt-get upgrade -y')
     sudo('apt-get install -y git git-flow tmux ack-grep')
     sudo('apt-get install -y python-pip python-dev python-virtualenv')
     sudo('apt-get install -y libffi-dev libpq-dev cmake')
+    sudo('apt-get install -y libcouchbase2-libevent libcouchbase-dev')
 
     with warn_only():
         git_username = run('git config user.name')
@@ -61,7 +64,7 @@ def setup():
         sudo('pip install virtualenvwrapper')
         run('echo "export WORKON_HOME=$HOME/.virtualenvs" >> $HOME/.zshrc')
         # run('export PROJECT_HOME=$HOME/dev')
-        run('source /usr/local/bin/virtualenvwrapper.sh')
+        run('echo "source /usr/local/bin/virtualenvwrapper.sh" >> $HOME/.zshrc')
 
 
 def copy_ssh_keys():
