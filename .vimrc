@@ -28,6 +28,22 @@ Plugin 'Valloric/YouCompleteMe'
 " Python extensions
 Plugin 'fisadev/vim-isort'
 
+Plugin 'tpope/vim-obsession'
+
+" File browsing
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+" Searching
+Plugin 'kien/ctrlp.vim'
+
+" Git integration
+Plugin 'tpope/vim-fugitive'
+
+"Powerline
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
 " -----------------------------------------------------------------------------
 " vundle requires
 call vundle#end()
@@ -130,3 +146,12 @@ autocmd VimEnter *
 let g:netrw_liststyle = 3
 
 colorscheme maui
+
+" Split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
