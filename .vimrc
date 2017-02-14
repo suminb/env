@@ -40,8 +40,9 @@ Plugin 'kien/ctrlp.vim'
 " Git integration
 Plugin 'tpope/vim-fugitive'
 
-"Powerline
+" Powerline
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 
 
 " -----------------------------------------------------------------------------
@@ -155,3 +156,29 @@ nnoremap <C-H> <C-W><C-H>
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
+" NOTE: For some reason, the vim-xkbswitch plugin does not work as intended.
+" We will come back to this issue in the future.
+"
+" Plugin 'lyokha/vim-xkbswitch'
+" let g:XkbSwitchEnabled = 1
+" let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+" let g:XkbSwitchAssistNKeymap = 1
+" let g:XkbSwitchNLayout = 'us'
+
+" NOTE: Instead of using vim-xkbswitch plugin, we will use the following
+" method
+if has('macunix') && filereadable('/usr/local/lib/libInputSourceSwitcher.dylib')
+  " According to :help i_CTRL-C,
+  "
+  " CTRL-C  Quit insert mode, go back to Normal mode.  Do not check for
+  "         abbreviations.  Does not trigger the |InsertLeave| autocommand
+  "         event.
+  "
+  " And therefore we need to map <C-C> to <Esc>. This is primarily for my new
+  " MacBook Pro that comes with a TouchBar (and a virtual ECS key)
+  ino <C-C> <Esc>
+
+  autocmd InsertLeave * call
+    \ libcall('/usr/local/lib/libInputSourceSwitcher.dylib',
+      \  'Xkb_Switch_setXkbLayout', 'com.apple.keylayout.US')
+endif
