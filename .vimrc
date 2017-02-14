@@ -178,6 +178,8 @@ if has('macunix') && filereadable('/usr/local/lib/libInputSourceSwitcher.dylib')
   " MacBook Pro that comes with a TouchBar (and a virtual ECS key)
   ino <C-C> <Esc>
 
+  " This input source switcher requires:
+  " https://github.com/vovkasm/input-source-switcher
   autocmd InsertLeave * call
     \ libcall('/usr/local/lib/libInputSourceSwitcher.dylib',
       \  'Xkb_Switch_setXkbLayout', 'com.apple.keylayout.US')
