@@ -46,6 +46,9 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Async linter
 Plugin 'w0rp/ale'
 
+"Golang plugin
+Plugin 'fatih/vim-go'
+
 
 
 " -----------------------------------------------------------------------------
