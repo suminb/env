@@ -157,6 +157,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <C-[> :cprev<CR>
+nnoremap <C-]> :cnext<CR>
+
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " NOTE: For some reason, the vim-xkbswitch plugin does not work as intended.
