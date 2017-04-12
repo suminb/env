@@ -119,6 +119,7 @@ augroup mkd
   autocmd BufRead *.markdown set formatoptions=tcroqn2 comments=n:> spell
   autocmd BufRead *.mkdn     set formatoptions=tcroqn2 comments=n:> spell
   autocmd BufRead *.mkd      set formatoptions=tcroqn2 comments=n:> spell
+  let g:vim_markdown_folding_disabled = 1
 augroup END
 
 " English spelling checker.
