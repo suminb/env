@@ -19,7 +19,6 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'stephpy/vim-yaml'
 
 " function extensions
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'sjl/gundo.vim'
 Plugin 'rhysd/committia.vim'
@@ -127,15 +126,6 @@ setlocal spelllang=en_us
 
 " Pathogen
 silent! call pathogen#infect()
-
-" Syntastic
-" autocmd VimEnter *
-" \ if exists(':SyntasticCheck')
-" \|  let g:syntastic_cpp_compiler_options = ' -std=c++11'
-" \|  let g:syntastic_python_checkers=['flake8']
-" \|  let g:syntastic_python_flake8_args='--ignore=E301'
-" \|  cabbrev E Explore
-" \|endif
 
 " Gundo
 autocmd VimEnter *
