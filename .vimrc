@@ -145,6 +145,15 @@ let g:netrw_liststyle = 3
 
 colorscheme maui
 
+" For some reason, arrow keys and mouse inputs insert A, B, C, D letters
+" This is a workaround that I found on
+" http://vim.wikia.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell
+nmap OA k
+nmap OB j
+nmap OC l
+nmap OD h
+
+
 " Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
