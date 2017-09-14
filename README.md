@@ -31,3 +31,23 @@ Miscellaneous Notes
 Then add the following line in `.vimrc` to enable the plugin.
 
     Plugin 'w0rp/ale'
+
+### Vim Cheatsheets
+
+(Not sure if this is a good place for this kind of notes, but we'll put it here for now)
+
+#### Search
+
+    /pattern
+    
+#### Search in `*.py` files
+
+    :vim /pattern/ **/*.py
+
+#### Close all splits but the current one
+
+    :only
+
+#### Close all tabs but the current one
+
+    :tabonly
