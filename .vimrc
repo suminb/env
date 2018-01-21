@@ -45,6 +45,8 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Async linter
 Plugin 'w0rp/ale'
 
+Plugin 'integralist/vim-mypy'
+
 "Golang plugin
 Plugin 'fatih/vim-go'
 
