@@ -74,7 +74,7 @@ set autoindent
 highlight HardTab cterm=underline
 autocmd BufWinEnter * 2 match HardTab /\t\+/
 
-" I dislike CRLF.
+" Avoid using CRLF.
 set fileformat=unix
 
 " Make backspace works like most other applications.
