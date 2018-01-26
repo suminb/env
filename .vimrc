@@ -50,6 +50,11 @@ Plugin 'integralist/vim-mypy'
 "Golang plugin
 Plugin 'fatih/vim-go'
 
+" TypeScript syntax highlighting
+Plugin 'leafgarland/typescript-vim'
+
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 
 " -----------------------------------------------------------------------------
@@ -164,6 +169,24 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap <C-[> :cprev<CR>
 nnoremap <C-]> :cnext<CR>
+
+nnoremap <C-P> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR><CR>
+if executable('rg')
+  command! -bang -nargs=* Rg
+          \ call fzf#vim#grep('rg ' .
+          \   '--color=always ' .
+          \   '--glob "!.git/*" ' .
+          \   '--ignore-case ' .
+          \   '--line-number ' .
+          \   '--column ' .
+          \   '--no-heading ' .
+          \   '--hidden ' .
+          \   '--ignore-file=.gitignore ' .
+          \   '--follow ' .
+          \   <q-args>, 1,
+          \   fzf#vim#with_preview('right:50%'),
+          \   <bang>0)
+endif
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
