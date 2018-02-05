@@ -1,0 +1,20 @@
+{
+    "files.autoSave": "onWindowChange",
+    "editor.wordWrap": "on",
+
+    // The base path of image url.You can use variable ${currentFileDir} and ${projectRoot}. ${currentFileDir} will be replaced by the path of directory that contain current editing file. ${projectRoot} will be replaced by path of the project opened in vscode. If you set basePath to empty String, it will insert absolute path to file.
+    "pasteImage.basePath": "${currentFileDir}",
+
+    // Force set the file separator styel to unix style. If set false, separator styel will follow the system style.
+    "pasteImage.forceUnixStyleSeparator": true,
+
+    // The destination to save image file.You can use variable ${currentFileDir} and ${projectRoot}. ${currentFileDir} will be replaced by the path of directory that contain current editing file. ${projectRoot} will be replaced by path of the project opened in vscode.
+    "pasteImage.path": "${currentFileDir}/${currentFileNameWithoutExt}",
+
+    // The string prepend to the resolved image path before paste.
+    "pasteImage.prefix": "",
+
+	// The string append to the resolved image path before paste.
+    "pasteImage.suffix": "",
+
+}
