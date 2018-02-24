@@ -53,8 +53,11 @@ Plugin 'fatih/vim-go'
 " TypeScript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
 
+" File search with ripgrep
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+
+Plugin 'eugen0329/vim-esearch'
 
 
 " -----------------------------------------------------------------------------
