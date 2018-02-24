@@ -201,6 +201,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " let g:XkbSwitchAssistNKeymap = 1
 " let g:XkbSwitchNLayout = 'us'
 
+" Plugin w0rp/ale
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+
 " NOTE: Instead of using vim-xkbswitch plugin, we will use the following
 " method
 if has('macunix') && filereadable('/usr/local/lib/libInputSourceSwitcher.dylib')
