@@ -100,3 +100,9 @@ alias pt="ptpython --vi"
 
 # Use 256 colors
 export TERM=screen-256color
+
+# Python virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+source /usr/local/bin/virtualenvwrapper.sh
+export HISTTIMEFORMAT="%d/%m/%y %T "
