@@ -97,6 +97,7 @@ alias rm.pyc="find . -name '*.pyc' -delete -print"
 alias rm.stopped-containers="docker rm $(docker ps -a -q)"
 alias rm.untagged-images="docker rmi -f $(docker images | grep "^<none>" | awk '{print $3}')"
 alias pt="ptpython --vi"
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Use 256 colors
 export TERM=screen-256color
