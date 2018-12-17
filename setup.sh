@@ -53,6 +53,11 @@ sudo apt-get install -y cmake
 vim +PluginInstall +qall
 python $HOME/.vim/bundle/YouCompleteMe/install.py
 
+echo "Install system utilities"
+RIPGREP_VERSION="0.10.0"
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_0.10.0_amd64.deb
+sudo dpkg -i ripgrep_${RIPGREP_VERSION}_amd64.deb
+
 echo "Install Couchbase libraries"
 curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
 sudo curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list > \
@@ -63,5 +68,4 @@ sudo apt-get install -y libcouchbase2-libevent libcouchbase-dev
 echo "Install other necessary libraries & programs"
 sudo apt-get install -y python-dev python-pip python-virtualenv
 sudo apt-get install -y libffi-dev libpq-dev
-sudo apt-get install -y git-flow ack-grep
 sudo pip install isort
