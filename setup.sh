@@ -15,6 +15,10 @@ if ! command_exists zsh; then
     chsh -s $(which zsh)
 fi
 
+if ! command_exists curl; then
+    sudo apt install -y curl
+fi
+
 echo -n "Enter your full name for git: "
 read git_user_name
 git config --global user.name "$git_user_name"
