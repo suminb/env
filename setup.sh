@@ -9,7 +9,7 @@ BASE_PATH=$(pwd)
 popd
 
 if ! command_exists zsh; then
-    sudo apt-get install -y zsh
+    sudo apt install -y zsh
 
     # Change the default shell
     chsh -s $(which zsh)
@@ -51,7 +51,7 @@ cp $BASE_PATH/maui.vim ~/.vim/colors/
 echo "Install Vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Required to build YouCompleteMe plugin for vim
-sudo apt-get install -y cmake
+sudo apt install -y cmake
 vim +PluginInstall +qall
 python $HOME/.vim/bundle/YouCompleteMe/install.py
 
@@ -59,10 +59,10 @@ echo "Install Couchbase libraries"
 curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
 sudo curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list > \
     /etc/apt/sources.list.d/couchbase.list
-sudo apt-get update
-sudo apt-get install -y libcouchbase2-libevent libcouchbase-dev
+sudo apt update
+sudo apt install -y libcouchbase2-libevent libcouchbase-dev
 
 echo "Install other necessary libraries & programs"
-sudo apt-get install -y python-dev python-pip python-virtualenv
-sudo apt-get install -y libffi-dev libpq-dev
+sudo apt install -y python-dev python-pip python-virtualenv
+sudo apt install -y libffi-dev libpq-dev
 sudo pip install isort
