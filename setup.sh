@@ -15,6 +15,8 @@ if ! command_exists zsh; then
     chsh -s $(which zsh)
 fi
 
+sudo apt update
+
 echo "Install system utilities"
 RIPGREP_VERSION="0.10.0"
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_0.10.0_amd64.deb
