@@ -8,6 +8,8 @@ pushd $(dirname $0)
 BASE_PATH=$(pwd)
 popd
 
+sudo apt update
+
 if ! command_exists zsh; then
     sudo apt install -y zsh
 
@@ -15,13 +17,11 @@ if ! command_exists zsh; then
     chsh -s $(which zsh)
 fi
 
-sudo apt update
-
 echo "Install system utilities"
+sudo apt install -y curl git vim
 RIPGREP_VERSION="0.10.0"
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_0.10.0_amd64.deb
 sudo dpkg -i ripgrep_${RIPGREP_VERSION}_amd64.deb
-sudo apt install -y curl git vim
 
 echo -n "Enter your full name for git: "
 read git_user_name
