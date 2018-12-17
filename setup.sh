@@ -15,9 +15,11 @@ if ! command_exists zsh; then
     chsh -s $(which zsh)
 fi
 
-if ! command_exists curl; then
-    sudo apt install -y curl
-fi
+echo "Install system utilities"
+RIPGREP_VERSION="0.10.0"
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_0.10.0_amd64.deb
+sudo dpkg -i ripgrep_${RIPGREP_VERSION}_amd64.deb
+sudo apt install -y curl git vim
 
 echo -n "Enter your full name for git: "
 read git_user_name
@@ -52,11 +54,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo apt-get install -y cmake
 vim +PluginInstall +qall
 python $HOME/.vim/bundle/YouCompleteMe/install.py
-
-echo "Install system utilities"
-RIPGREP_VERSION="0.10.0"
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_0.10.0_amd64.deb
-sudo dpkg -i ripgrep_${RIPGREP_VERSION}_amd64.deb
 
 echo "Install Couchbase libraries"
 curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
