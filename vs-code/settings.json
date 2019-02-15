@@ -1,0 +1,17 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.renderControlCharacters": true,
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/usr/local/bin/python",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Monaco, Menlo, 'Courier New', monospace",
+    "window.zoomLevel": 0,
+    "workbench.editor.showTabs": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "rewrap.wrappingColumn": 80,
+    "editor.rulers": [
+        80
+    ]
+}
