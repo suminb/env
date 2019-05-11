@@ -42,7 +42,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 
 " Powerline
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 "Async linter
 Plugin 'w0rp/ale'
