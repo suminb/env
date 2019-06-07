@@ -3,15 +3,24 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "editor.renderControlCharacters": true,
-    "python.linting.pylintEnabled": false,
-    "python.pythonPath": "/usr/local/bin/python",
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Monaco, Menlo, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "D2Coding, Monaco, Menlo, 'Courier New', monospace",
     "window.zoomLevel": 0,
     "workbench.editor.showTabs": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    "rewrap.wrappingColumn": 80,
+    "rewrap.wrappingColumn": 79,
     "editor.rulers": [
         80
-    ]
+    ],
+    "editor.wordWrap": "on",
+    "terminal.integrated.fontSize": 15,
+
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/usr/local/bin/python",
+
+    "go.gopath": "/Users/sb/go",
+    "go.goroot": "/usr/local/Cellar/go/1.12.4/libexec",
+    "go.inferGopath": true,
+
+    "pasteImage.path": "${currentFileNameWithoutExt}"
 }
