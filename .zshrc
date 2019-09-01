@@ -94,8 +94,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias rm.pyc="find . -name '*.pyc' -delete -print"
-alias rm.stopped-containers="docker rm $(docker ps -a -q)"
-alias rm.untagged-images="docker rmi -f $(docker images | grep "^<none>" | awk '{print $3}')"
+alias rm.stopped-containers='docker rm $(docker ps -a -q)'
+alias rm.untagged-images='docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")'
 alias rm.merged-branches="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 alias pt="ptpython --vi"
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
