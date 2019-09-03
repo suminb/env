@@ -3,7 +3,7 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "editor.renderControlCharacters": true,
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.fontFamily": "D2Coding, Monaco, Menlo, 'Courier New', monospace",
     "window.zoomLevel": 0,
     "workbench.editor.showTabs": true,
