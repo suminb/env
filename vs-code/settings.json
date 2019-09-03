@@ -19,7 +19,7 @@
     "python.pythonPath": "/usr/local/bin/python",
 
     "go.gopath": "/Users/sb/go",
-    "go.goroot": "/usr/local/Cellar/go/1.12.4/libexec",
+    "go.goroot": "/usr/local/Cellar/go/latest/libexec",
     "go.inferGopath": true,
 
     "pasteImage.path": "${currentFileNameWithoutExt}"
