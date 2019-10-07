@@ -39,7 +39,14 @@ git config --global push.default simple
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#
+# RUNZSH=no prevents running the shell after installation, so that the rest of
+# the installation continues.
+# CHSH=no prevents the script asking whether we want to change the default
+# shell to zsh.
+#
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
 
 # Use 256 colors
 echo "export TERM=screen-256color" >> $HOME/.zshrc
