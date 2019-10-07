@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit when any command fails
+set -e
+
 command_exists() {
     which "$1" &> /dev/null
 }
