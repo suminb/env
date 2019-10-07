@@ -60,14 +60,16 @@ sudo apt install -y cmake
 vim +PluginInstall +qall
 python $HOME/.vim/bundle/YouCompleteMe/install.py
 
-echo "Install Couchbase libraries"
-curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
-sudo curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list > \
-    /etc/apt/sources.list.d/couchbase.list
-sudo apt update
-sudo apt install -y libcouchbase2-libevent libcouchbase-dev
-
 echo "Install other necessary libraries & programs"
 sudo apt install -y python-dev python-pip python-virtualenv
 sudo apt install -y libffi-dev libpq-dev
 sudo pip install isort
+
+install_couchbase() {
+    echo "Install Couchbase libraries"
+    curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -
+    sudo curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list > \
+        /etc/apt/sources.list.d/couchbase.list
+    sudo apt update
+    sudo apt install -y libcouchbase2-libevent libcouchbase-dev
+}
