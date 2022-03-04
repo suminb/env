@@ -165,13 +165,13 @@ nmap OD h
 
 
 " Split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
-nnoremap <C-[> :cprev<CR>
-nnoremap <C-]> :cnext<CR>
+" nnoremap <C-[> :cprev<CR>
+" nnoremap <C-]> :cnext<CR>
 
 nnoremap <C-P> :call fzf#vim#files('', fzf#vim#with_preview('right'))<CR><CR>
 if executable('rg')
