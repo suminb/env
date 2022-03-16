@@ -110,6 +110,12 @@ export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+# If `pyenv` command exists
+if type pyenv > /dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
