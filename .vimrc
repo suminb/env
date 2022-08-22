@@ -50,6 +50,10 @@ Plugin 'w0rp/ale'
 "Golang plugin
 Plugin 'fatih/vim-go'
 
+" JavaScript, React
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
+
 " TypeScript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
 
