@@ -21,7 +21,7 @@ if ! command_exists zsh; then
 fi
 
 echo "Install system utilities"
-brew install curl git vim ripgrep tmux
+brew install curl git vim ripgrep tmux coreutils
 
 echo -n "Enter your full name for git: "
 read git_user_name
