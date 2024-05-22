@@ -36,7 +36,6 @@ Plugin 'stephpy/vim-yaml'
 Plugin 'tpope/vim-commentary'
 Plugin 'sjl/gundo.vim'
 Plugin 'rhysd/committia.vim'
-Plugin 'Valloric/YouCompleteMe'
 
 " Python extensions
 Plugin 'fisadev/vim-isort'
@@ -157,13 +156,6 @@ silent! call pathogen#infect()
 autocmd VimEnter *
 \ if exists(':Gundo')
 \|  nnoremap <F5> :GundoToggle<CR>
-\|endif
-
-" YouCompleteMe
-autocmd VimEnter *
-\ if exists('g:ycm_goto_buffer_command')
-\|  let g:ycm_goto_buffer_command = 'new-tab'
-\|  nnoremap <F12> :YcmCompleter GoToDefinition<CR>
 \|endif
 
 " NetRW tree style listing
