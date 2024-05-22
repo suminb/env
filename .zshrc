@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/libpq/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -95,6 +95,8 @@ export LC_ALL="en_US.UTF-8"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
 alias rm.pyc="find . -name '*.pyc' -delete -print"
 alias rm.stopped-containers='docker rm $(docker ps -a -q)'
 alias rm.untagged-images='docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")'
@@ -106,11 +108,8 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Use 256 colors
 export TERM=screen-256color
 
-# Python virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev
-source /usr/local/bin/virtualenvwrapper.sh
-export HISTTIMEFORMAT="%d/%m/%y %T "
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # If `pyenv` command exists
 if type pyenv > /dev/null; then
@@ -124,3 +123,12 @@ fi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export HELM_PATH=/usr/local/bin
+export PATH=$HELM_PATH:$PATH
+export KUBERNETES_CLI_PATH=/usr/local/bin
+export PATH=$KUBERNETES_CLI_PATH:$PATH
+export NCC_CLI_PATH=/usr/local/bin
+export PATH=$NCC_CLI_PATH:$PATH
+export DOCKER_PATH=/usr/local/bin
+export PATH=$DOCKER_PATH:$PATH
