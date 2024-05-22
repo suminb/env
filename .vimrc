@@ -2,6 +2,18 @@
 
 " vim:ft=vim:et:ts=2:sw=2:sts=2:
 
+" Plugins managed by vim-plug (https://github.com/junegunn/vim-plug)
+call plug#begin()
+
+Plug 'tpope/vim-sensible'
+
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+call plug#end()
+
 " vundle requires
 set nocompatible
 filetype off
