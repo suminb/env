@@ -12,6 +12,9 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+" Color scheme
+Plug 'jacoborus/tender.vim'
+
 call plug#end()
 
 " vundle requires
