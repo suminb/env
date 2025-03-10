@@ -8,7 +8,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 
 Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
@@ -161,7 +161,7 @@ autocmd VimEnter *
 " NetRW tree style listing
 let g:netrw_liststyle = 3
 
-colorscheme maui
+colorscheme tender
 
 " For some reason, arrow keys and mouse inputs insert A, B, C, D letters
 " This is a workaround that I found on
