@@ -103,8 +103,6 @@ export LC_ALL="en_US.UTF-8"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-
 alias rm.pyc="find . -name '*.pyc' -delete -print"
 alias rm.stopped-containers='docker rm $(docker ps -a -q)'
 alias rm.untagged-images='docker rmi -f $(docker images | grep "^<none>" | awk "{print $3}")'
@@ -116,21 +114,29 @@ alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Use 256 colors
 export TERM=screen-256color
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
-# If `pyenv` command exists
-if type pyenv > /dev/null; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+# Lazy load pyenv
+pyenv() {
+  unfunction pyenv
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(command pyenv init -)"
+  eval "$(command pyenv virtualenv-init -)"
+  pyenv "$@"
+}
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-# [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-# [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# Lazy load pyenv-virtualenv
+pyenv-virtualenv() {
+  unfunction pyenv-virtualenv
+  eval "$(command pyenv virtualenv-init -)"
+  pyenv-virtualenv "$@"
+}
+
+# # tabtab source for serverless package
+# # uninstall by removing these lines or running `tabtab uninstall serverless`
+# # [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# # tabtab source for sls package
+# # uninstall by removing these lines or running `tabtab uninstall sls`
+# # [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export HELM_PATH=/usr/local/bin
 export PATH=$HELM_PATH:$PATH
