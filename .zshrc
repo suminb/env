@@ -81,3 +81,10 @@ zstyle ':completion:*' menu select
 
 # >>> c3 cli: cx
 export PATH="/Users/sb/.local/bin":$PATH
+
+# NodeJS
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
