@@ -63,6 +63,7 @@ Plugin 'w0rp/ale'
 
 "Golang plugin
 Plugin 'fatih/vim-go'
+let g:go_version_warning = 0
 
 " JavaScript, React
 Plugin 'pangloss/vim-javascript'
