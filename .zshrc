@@ -37,6 +37,8 @@ alias rm.merged-branches="git branch --merged | egrep -v '(^\*|master|dev)' | xa
 alias pt="ptpython --vi"
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # Use 256 colors
 export TERM=screen-256color
 
