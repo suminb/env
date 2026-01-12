@@ -8,21 +8,18 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/libpq/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-DISABLE_UPDATE_PROMPT=true
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
+# Setup oh-my-zsh and powerlevel10k theme
+if [[ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
+  # oh-my-zsh is installed, use it with powerlevel10k theme
+  export ZSH=$HOME/.oh-my-zsh
+  DISABLE_UPDATE_PROMPT=true
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+  plugins=(git)
+  source $ZSH/oh-my-zsh.sh
+else
+  # oh-my-zsh not installed, source powerlevel10k directly
+  [[ -f $HOME/env/powerlevel10k/powerlevel10k.zsh-theme ]] && source $HOME/env/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # User configuration
 
