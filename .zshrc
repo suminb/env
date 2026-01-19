@@ -78,7 +78,7 @@ zstyle ':completion:*' menu select
 export PATH="/Users/sb/.local/bin":$PATH
 
 # NodeJS
-export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
