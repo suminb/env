@@ -20,8 +20,12 @@ if [[ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
   plugins=(git)
   source $ZSH/oh-my-zsh.sh
 else
-  # oh-my-zsh not installed, source powerlevel10k directly
-  [[ -f $HOME/env/powerlevel10k/powerlevel10k.zsh-theme ]] && source $HOME/env/powerlevel10k/powerlevel10k.zsh-theme
+  THEME_PATH=$HOME/env/themes/powerlevel10k/powerlevel10k.zsh-theme
+  if [[ ! -f $THEME_PATH ]]; then
+    mkdir $HOME/env/themes
+    git clone https://github.com/romkatv/powerlevel10k.git $HOME/env/themes/powerlevel10k
+  fi
+  [[ -f $THEME_PATH ]] && source $THEME_PATH
 fi
 
 # User configuration
