@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# This is where the 'env' directory is located at
+BASE_PATH=$HOME/env
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/libpq/bin:$PATH
 
@@ -83,3 +86,11 @@ export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Auto suggestions
+PLUGIN_PATH=$BASE_PATH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ ! -f $PLUGIN_PATH ]]; then
+    mkdir $BASE_PATH/plugins
+    git clone https://github.com/zsh-users/zsh-autosuggestions $BASE_PATH/plugins/zsh-autosuggestions
+fi
+source $PLUGIN_PATH
