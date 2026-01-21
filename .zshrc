@@ -11,7 +11,7 @@ BASE_PATH=$HOME/env
 bindkey -e
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/libpq/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/opt/libpq/bin:$PATH
 
 # Setup oh-my-zsh and powerlevel10k theme
 if [[ -f $HOME/.oh-my-zsh/oh-my-zsh.sh ]]; then
