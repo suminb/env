@@ -1,10 +1,3 @@
-Install Oh My Zsh
----
-
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-See https://github.com/robbyrussell/oh-my-zsh for more info.
-
 Install Vundle
 ---
 
