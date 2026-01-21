@@ -8,6 +8,8 @@ fi
 # This is where the 'env' directory is located at
 BASE_PATH=$HOME/env
 
+bindkey -e
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/libpq/bin:$PATH
 
