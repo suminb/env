@@ -10,6 +10,9 @@ BASE_PATH=$HOME/env
 
 bindkey -e
 
+# This enables delete key on my Happy Hacking Keyboard
+bindkey '^[[3~' delete-char
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/opt/libpq/bin:$PATH
 
