@@ -103,4 +103,4 @@ if [[ ! -f $PLUGIN_PATH ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions $BASE_PATH/plugins/zsh-autosuggestions
 fi
 source $PLUGIN_PATH
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/libpq/bin:$PATH"
