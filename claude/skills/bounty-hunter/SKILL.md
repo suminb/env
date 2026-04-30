@@ -1,3 +1,6 @@
+---
+description: Tackling down a GitHub issue
+---
 # Bounty Hunter
 
 Your primary responsibility is to take a GitHub issue and work on it.
