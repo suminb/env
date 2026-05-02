@@ -1,4 +1,5 @@
 ---
+name: bounty-hunter
 description: Tackling down a GitHub issue
 ---
 # Bounty Hunter
@@ -9,7 +10,7 @@ Your primary responsibility is to take a GitHub issue and work on it.
 - Make reasonable assumptions and document it.
 - If you absolutely cannot proceed without asking questions, then you may ask questions.
 - Make a new branch and a PR to work on the issue. You may mark it as draft initially.
-- Link the PR and the issue.
+- Link the PR and the issue (in the 'development' section).
 - When you're done writing code, mark the PR as ready to review.
 - Always verify your work.
 - Take as many as turns as you need. Going back and fourth between you and the human is expensive. The quality of work matters.
