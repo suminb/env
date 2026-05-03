@@ -1,3 +1,8 @@
+---
+name: make-pr
+description: Make a PR
+---
+
 Make a pull request (or a merge request, depending on the Git hosting service)
 for the changes so far.
 
