@@ -3,15 +3,14 @@ from fabric.context_managers import cd
 from fabric.contrib.files import exists
 
 
-def setup():
-    run('curl http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -')
-    sudo('curl curl http://packages.couchbase.com/ubuntu/couchbase-ubuntu1204.list -o /etc/apt/sources.list.d/couchbase.list')
+
+def _install_packages():
     sudo('apt-get update && apt-get upgrade -y')
     sudo('apt-get install -y git git-flow tmux ack-grep')
     sudo('apt-get install -y python-pip python-dev python-virtualenv')
     sudo('apt-get install -y libffi-dev libpq-dev cmake')
-    sudo('apt-get install -y libcouchbase2-libevent libcouchbase-dev')
 
+def _configure_git():
     with warn_only():
         git_username = run('git config user.name')
     if not git_username:
@@ -30,12 +29,13 @@ def setup():
         '--pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s '
         '%Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit"')
 
+def _clone_env_repo():
     if not exists('env'):
         run('git clone https://github.com/suminb/env.git')
 
+def _configure_zsh():
     sudo('apt-get install -y zsh')
-    with warn_only():
-        run('sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"')
+
     # sudo('sed -i \'1s/^/auth       sufficient   pam_wheel.so trust group=chsh\n/g\' /etc/pam.d/chsh')
     # sudo('groupadd chsh')
     # run('usermod -a -G chsh ubuntu')
@@ -46,6 +46,7 @@ def setup():
     if not term_color:
         run('echo "export TERM=screen-256color" >> $HOME/.zshrc')
 
+def _configure_vim():
     if exists('.vimrc'):
         run('mv .vimrc .vimrc.bak')
     run('ln -s env/.vimrc')
@@ -58,6 +59,7 @@ def setup():
         run('.vim/bundle/YouCompleteMe/install.py')
         sudo('pip install isort')
 
+def _setup_virtualenvwrapper():
     with warn_only():
         workon_home = run('cat $HOME/.zshrc | grep "export WORKON_HOME"')
     if not workon_home:
@@ -65,6 +67,14 @@ def setup():
         run('echo "export WORKON_HOME=$HOME/.virtualenvs" >> $HOME/.zshrc')
         # run('export PROJECT_HOME=$HOME/dev')
         run('echo "source /usr/local/bin/virtualenvwrapper.sh" >> $HOME/.zshrc')
+
+def setup():
+    _install_packages()
+    _configure_git()
+    _clone_env_repo()
+    _configure_zsh()
+    _configure_vim()
+    _setup_virtualenvwrapper()
 
 
 def copy_ssh_keys():
