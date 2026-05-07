@@ -3,11 +3,13 @@ name: morning-briefing
 description: Generate daily brief every morning
 ---
 
-Pull data from all connected sources (Google Calendar, Gmail, and any other
-available connectors) and produce a concise daily briefing as a markdown file.
+Pull data from all connected sources (NAVER Works Calendar, Google Calendar,
+Gmail, and any other available connectors) and produce a concise daily briefing
+as a markdown file.
 
 ## What to gather
 - **Calendar:** All events for today (use Asia/Seoul timezone)
+    - NAVER Works Calendar: Use caldav.calendar.navercorp.com, ask me for credentials
 - **Email:** Unread messages from the last 24 hours (on Mondays, cover the
   full weekend back to Friday)
 
